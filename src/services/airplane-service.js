@@ -50,8 +50,20 @@ async function getAirplane(id) {
   }
 }
 
+async function deleteAirplane(id) {
+  try {
+    const airplane = airplaneRepository.delete(id);
+    return airplane;
+  } catch (error) {
+    throw new AppError(
+      'Not able to delete an airplane',
+      StatusCodes.INTERNAL_SERVER_ERROR
+    );
+  }
+}
 module.exports = {
   createAirplane,
   getAirplanes,
   getAirplane,
+  deleteAirplane,
 };
