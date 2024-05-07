@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
   }
   City.init(
     {
-      id: DataTypes.INTEGER,
       name: {
         type: DataTypes.STRING,
         allowNull: false,
